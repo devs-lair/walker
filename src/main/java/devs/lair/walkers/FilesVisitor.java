@@ -13,7 +13,7 @@ public class FilesVisitor {
         Files.walkFileTree(path, new SimpleFileVisitor<>() {
             @Override
             public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) {
-                if (Files.isRegularFile(file) && file.endsWith(".xml")) {
+                if (Files.isRegularFile(file) && file.toString().endsWith(".xml")) {
                     result.add(file);
                 }
                 return FileVisitResult.CONTINUE;

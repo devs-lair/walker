@@ -12,7 +12,7 @@ public class FilesWalk {
     public List<Path> collect(String dir, int depth) throws IOException {
         try (Stream<Path> stream = Files.walk(Paths.get(dir), depth)) {
             return stream.filter(file -> Files.isRegularFile(file)
-                            && file.endsWith(".xml")).toList();
+                            && file.toString().endsWith(".xml")).toList();
         }
     }
 }
